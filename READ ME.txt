@@ -1,0 +1,26 @@
+Data is output to the workspace by pressing the "Output To Workspace" button. 
+
+T_dt_raw, T_de_raw, T_da_raw, T_dr_raw, T_df_raw represent the x-values or "Time" of each of the key points placed on the graph.
+
+U_dt_raw, U_de_raw, U_da_raw, U_dr_raw, U_df_raw represent the y-values or "U" of each of the key points placed on the graph.
+(Circles)
+
+
+T_linear represents the time vector of 0:Dt:EndTime set by the simulation parameters set inside the GUI.
+
+U_linear(Dotted Lines) represents the linearly  interpolated values of the raw data points at each of the time steps corresponding to T_linear.
+
+
+T_filter represents the time vector of 0:Dt:EndTime set by the simulation parameters set inside the GUI.
+
+U_filter(Solid Lines) represents the filtered results of the linear interpolation.
+
+
+U is ouput as a (5 x NumberofPoints) with:
+	U(1,:) = Dt
+	U(2,:) = De
+	U(3,:) = Da
+	U(4,:) = Dr
+	U(5,:) = Df
+
+Note that Wn is a filter frequency. You should experiment with this to get the smoothness you want in your control sequence, but if its too low you will not be able to generate rapid changes in the input. Make sure you get this right and finalised before designing a detailed manoeuvre.
